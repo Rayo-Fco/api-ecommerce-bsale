@@ -30,14 +30,30 @@ El sistema se compone de siguiente estructura:
 |      Archivo      |       Descripcion        | 
 | ----------------- | ------------------------ | 
 | ```config/index.ts```| Se configuran las variables en un json en donde se obtiene el puerto, los usuario de la base de datos y la url de la misma|
-
+|```controllers/ControllerCategory.ts```| Es el controlador de las categorias en donde se pueden obtener las categorias y los productos por categorias |
+|```controllers/ControllerSearch.ts```| Es el controlador de las busquedas en donde se pueden obtener las busquedas con los filtros determinados |
+|```helpers/pagination.ts```| Es una funcion en donde genera una paginacion en la respuesta de la base de datos |
+|```models/Category.ts```| Es el modelo de la base de datos de las Categorias |
+|```models/Product.ts```| Es el modelo de la base de datos de los Productos |
+|```routers/index.ts```| Es el controlador de todas las rutas en donde se importan los controladores para hacer su uso dependiendo de la ruta asociada |
+|```app.ts```| Es la clase donde se cargan los componentes como router,config,database y middleware |
+|```database.ts```| Es la conexion a la base de datos por medio de Sequelize hacia Mysql |
+|```index.ts```| Es la clase donde se inicia la aplicacion llamando a la clase App() |
 
 ***Controller***
 
 
 |      Funcion      |       Valores Recibidos  |  Valor Retornado  |  Descripcion |      
 | ----------------- | ------------------------ | ------------------|--------------|
-
+| (GET) getCategory()| ningundo | categorias[] | Se Realiza la consulta en la base de datos para obtener las categorias pero solo su nombre|
+|(GET) getProductsByCategory()| Request.params= Categoria y Request.query = filtros y la pagina | ``` {
+            totalPage:number,
+            currentPage: number,
+            nextPage: number,
+            previousPage: number,
+            totalItem:number,
+            data: []
+        }``` |Se obtiene los datos desde los parametros en la url como dentro de las query params para obtener los filtros y la paginacion|
 
 
 
