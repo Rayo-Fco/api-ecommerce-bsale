@@ -40,13 +40,15 @@ El sistema se compone de siguiente estructura:
 |```database.ts```| Es la conexion a la base de datos por medio de Sequelize hacia Mysql |
 |```index.ts```| Es la clase donde se inicia la aplicacion llamando a la clase App() |
 
-***Controller***
+***Router***
+
+|      Ruta      |      Funcion      |       Valores Recibidos  |  Valor Retornado  |  Descripcion |      
+ |------------- | ----------------- | ------------------------ | ------------------|--------------|
+ |(GET) ```/```| searchProduct()| Request.query=>filtros y la pagina | ``` {totalPage:number;currentPage: number;nextPage: number; previousPage: number;totalItem:number; data: [];}```| Se Realiza la consulta en la base de datos para obtener los produtos dependiento de los filtros si aplican|
+|(GET) ```/categories/all```| getCategory()| ningundo | categorias[] | Se Realiza la consulta en la base de datos para obtener las categorias pero solo su nombre|
+|(GET) ```/category/:category```||(GET) getProductsByCategory()| Request.params=>category y Request.query=>filtros y la pagina | ``` {totalPage:number;currentPage: number;nextPage: number; previousPage: number;totalItem:number; data: [];}``` |Se obtiene los datos desde los parametros en la url como dentro de las query params para obtener los filtros y la paginacion|
 
 
-|      Funcion      |       Valores Recibidos  |  Valor Retornado  |  Descripcion |      
-| ----------------- | ------------------------ | ------------------|--------------|
-| (GET) getCategory()| ningundo | categorias[] | Se Realiza la consulta en la base de datos para obtener las categorias pero solo su nombre|
-|(GET) getProductsByCategory()| Request.params=>Categoria y Request.query=>filtros y la pagina | ``` {totalPage:number;currentPage: number;nextPage: number; previousPage: number;totalItem:number; data: [];}``` |Se obtiene los datos desde los parametros en la url como dentro de las query params para obtener los filtros y la paginacion|
 
 
 
