@@ -46,13 +46,7 @@ El sistema se compone de siguiente estructura:
 |      Funcion      |       Valores Recibidos  |  Valor Retornado  |  Descripcion |      
 | ----------------- | ------------------------ | ------------------|--------------|
 | (GET) getCategory()| ningundo | categorias[] | Se Realiza la consulta en la base de datos para obtener las categorias pero solo su nombre|
-|(GET) getProductsByCategory()| Request.params= Categoria y Request.query = filtros y la pagina | ``` {totalPage:number;
-            currentPage: number;
-            nextPage: number;
-            previousPage: number;
-            totalItem:number;
-            data: [];
-        }``` |Se obtiene los datos desde los parametros en la url como dentro de las query params para obtener los filtros y la paginacion|
+|(GET) getProductsByCategory()| Request.params=>Categoria y Request.query=>filtros y la pagina | ``` {totalPage:number;currentPage: number;nextPage: number; previousPage: number;totalItem:number; data: [];}``` |Se obtiene los datos desde los parametros en la url como dentro de las query params para obtener los filtros y la paginacion|
 
 
 
